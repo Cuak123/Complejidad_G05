@@ -298,9 +298,10 @@ class VentanaPrincipal(tk.Tk):
         queue = [s]
         visited[s] = True
 
-        auxlist = self.ListaReceta[u].hijos.copy
+       
         while queue:
             u = queue.pop(0)
+            auxlist = self.ListaReceta[u].hijos.copy()
             for v in auxlist:
                 if not visited[v]:
                     visited[v] = True
