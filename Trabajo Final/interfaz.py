@@ -34,8 +34,8 @@ class VentanaPrincipal(tk.Tk):
         self.title("Sugerencias")
         self.geometry("1200x600")
 
-        self.label_pelicula = tk.Label(self, text="Ingrese el tiempo (ejemplo: 1h 30m):")
-        self.label_pelicula.place(x=20, y=45)
+        self.label_tiempo = tk.Label(self, text="Ingrese el tiempo (ejemplo: 1h 30m):")
+        self.label_tiempo.place(x=20, y=45)
 
         self.label_1 = tk.Label(self, text="Categoria:")
         self.label_1.place(x=900, y=45)
@@ -78,22 +78,6 @@ class VentanaPrincipal(tk.Tk):
         # Convertir el DataFrame a un array de objetos
         self.data = df.to_dict('records')
 
-        # Obtener una lista de directores únicos
-
-        # Obtener una lista de géneros únicos (separados por ',')
-        #self.generos = df['genres'].str.split(',').explode().apply(lambda x: x.strip()).unique().tolist()
-
-
-        # Crear el combobox de géneros
-        #self.combo_generos = ttk.Combobox(self)
-        #self.combo_generos['values'] = self.generos
-        #self.combo_generos.place(x=690, y=45)
-
-        # Crear el combobox de directores
-        #self.combo_Categorias = ttk.Combobox(self, width=28)
-        #self.combo_Categorias['values'] = self.Categorias
-        #self.combo_Categorias.place(x=980, y=45)
-
 
         self.Check_Aperitivos = ttk.Checkbutton(self, text = "Aperitivos y tapas")
         self.Check_Aperitivos.place(x=980, y=10)
@@ -117,8 +101,6 @@ class VentanaPrincipal(tk.Tk):
 
         self.ListaReceta = self.Guardar_Datos_Lista()
 
-        # CARGADO DE matriz de adyasencia
-        #self.matriz = np.loadtxt('matrizAdy.csv', delimiter=',')
 
         # Crear un grafo de ejemplo
         self.Iniciar()
